@@ -105,9 +105,9 @@ Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą G
 
 Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi.
 
-**Klucz publiczny**: [AndreansxTech_0x1A5C5CDB_public.asc](./AndreansxTech_0x1A5C5CDB_public.asc)
+**Klucz publiczny**: **[NIE DOSTĘPNY]**
 
-**Odcisk cyfrowy klucza**: `9282 DF55 1096 3273 6618  5B2E 4C80 939B 1A5C 5CDB`
+**Odcisk cyfrowy klucza**:  **[NIE DOSTĘPNY]**
 
 **Importowanie klucza (wiersz poleceń):**
 
