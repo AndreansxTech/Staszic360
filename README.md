@@ -105,14 +105,14 @@ Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą G
 
 Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi.
 
-**Klucz publiczny**: **[NIE DOSTĘPNY]**
+**Klucz publiczny**: **[Andreansx_public_key.asc](./Andreansx_public_key.asc)**
 
-**Odcisk cyfrowy klucza**:  **[NIE DOSTĘPNY]**
+**Odcisk cyfrowy klucza**:  **B5DFA80CFB9BEA3BFD11B4C62B20CCED43048B3E**
 
 **Importowanie klucza (wiersz poleceń):**
 
 ```bash
-gpg --import AndreansxTech_0x1A5C5CDB_public.asc
+gpg --import Andreansx_public_key.asc
 ```
 **Weryfikacja podpisów**
 ```bash
