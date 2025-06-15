@@ -101,9 +101,11 @@ Staszic360 został zaprojektowany z myślą o szerokiej dostępności i inkluzyw
 
 ## Weryfikacja podpisów
 
-Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą GPG, aby zapewnić ich integralność i autentyczność. Oznacza to, że możesz mieć pewność, iż pliki te nie zostały zmodyfikowane przez osoby trzecie od momentu ich podpisania przez nas. Należy mieć na uwadze, że weryfikacja sygnatur nie ma tutaj takiego charakteru, jak przy zkompilowanych programach gdzie krytyczna jest zgodność z kodem źródłowym.  
+Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą GPG, aby zapewnić ich integralność i autentyczność. Oznacza to, że możesz mieć pewność, iż pliki te nie zostały zmodyfikowane przez osoby trzecie od momentu ich podpisania przez nas. Należy mieć na uwadze, że weryfikacja sygnatur nie ma tutaj takiego charakteru, jak przy skompilowanych programach gdzie krytyczna jest zgodność z kodem źródłowym. Podpisuję te pliki, ponieważ jest to dobra okazja na poćwiczenie bardziej realnego certyfikowania plików. 
 
-Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi.
+Osoba podpisująca: **Michał Bańkowski**
+
+Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi, gdyż od ostatniego wydania strony, pliki mogły ulec zmianie.
 
 **Klucz publiczny**: **[Andreansx_public_key.asc](./Andreansx_public_key.asc)**
 

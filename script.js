@@ -1997,6 +1997,13 @@ const viewer = pannellum.viewer("panorama", {
           text: "Sala 18",
           sceneId: "sala18",
         },
+        {
+          pitch: 0,
+          yaw: 115,
+          type: "scene",
+          text: "Sala 19",
+          sceneId: "sala19"
+        }
       ],
     },
     sala18: {
@@ -2060,7 +2067,7 @@ const viewer = pannellum.viewer("panorama", {
           yaw: -60,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl3",
+          sceneId: "1pietr-stareskrzydl2",
         },
       ],
     },
