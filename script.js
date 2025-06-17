@@ -55,7 +55,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 30,
       type: "equirectangular",
-      panorama: "media/images/0portierniawejscie.webp",
+      panorama: "media/0portierniawejscie.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -78,7 +78,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/images/parterwejscie.webp",
+      panorama: "media/parterwejscie.webp",
       hotSpots: [
         {
           pitch: 180,
@@ -130,7 +130,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 135,
       type: "equirectangular",
-      panorama: "media/images/gabpedag.webp",
+      panorama: "media/gabpedag.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -168,7 +168,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/salagim.webp",
+      panorama: "media/salagim.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -192,7 +192,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/partsalagimwejscie.webp",
+      panorama: "media/partsalagimwejscie.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -216,7 +216,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/salagimn1.webp",
+      panorama: "media/salagimn1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -247,7 +247,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/images/salagimn.webp",
+      panorama: "media/salagimn.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -264,7 +264,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/images/niebdyw.webp",
+      panorama: "media/niebdyw.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -295,7 +295,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sekretariat.webp",
+      panorama: "media/sekretariat.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -319,7 +319,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 70,
       type: "equirectangular",
-      panorama: "media/images/dyrektor.webp",
+      panorama: "media/dyrektor.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -337,7 +337,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sek1.webp",
+      panorama: "media/sek1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -368,7 +368,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sekretariat3.webp",
+      panorama: "media/sekretariat3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -406,7 +406,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sala1.webp",
+      panorama: "media/sala1.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -423,7 +423,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/wicedyr.webp",
+      panorama: "media/wicedyr.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -440,7 +440,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/images/skarbnik.webp",
+      panorama: "media/skarbnik.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -458,7 +458,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 30,
       type: "equirectangular",
-      panorama: "media/images/sklepik.webp",
+      panorama: "media/sklepik.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -475,7 +475,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/partbiblioteka.webp",
+      panorama: "media/partbiblioteka.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -506,7 +506,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/bibl1.webp",
+      panorama: "media/bibl1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -530,7 +530,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/biblioteka2.webp",
+      panorama: "media/biblioteka2.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -548,7 +548,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/partnoweskrzydl1.webp",
+      panorama: "media/partnoweskrzydl1.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -586,7 +586,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 200,
       type: "equirectangular",
-      panorama: "media/images/sala24.webp",
+      panorama: "media/sala24.webp",
       hotSpots: [
         {
           pitch: 4,
@@ -603,7 +603,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 55,
       type: "equirectangular",
-      panorama: "media/images/partnoweskrzydl2.webp",
+      panorama: "media/partnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -634,7 +634,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 80,
       type: "equirectangular",
-      panorama: "media/images/sala25.webp",
+      panorama: "media/sala25.webp",
       hotSpots: [
         {
           pitch: 4,
@@ -651,7 +651,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/images/partnoweskrzydl3.webp",
+      panorama: "media/partnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -682,7 +682,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala26.webp",
+      panorama: "media/sala26.webp",
       hotSpots: [
         {
           pitch: 4,
@@ -699,7 +699,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/images/noweskrzydllacznik1.webp",
+      panorama: "media/noweskrzydllacznik1.webp",
       hotSpots: [
         {
           pitch: 6,
@@ -723,7 +723,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 10,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/images/noweskrzydllacznik2.webp",
+      panorama: "media/noweskrzydllacznik2.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -747,7 +747,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 20,
       type: "equirectangular",
-      panorama: "media/images/noweskrzydllacznik3.webp",
+      panorama: "media/noweskrzydllacznik3.webp",
       hotSpots: [
         {
           pitch: 10,
@@ -771,7 +771,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/noweskrzydllacznik4.webp",
+      panorama: "media/noweskrzydllacznik4.webp",
       hotSpots: [
         {
           pitch: 10,
@@ -802,7 +802,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/noweskrzydlszatnie.webp",
+      panorama: "media/noweskrzydlszatnie.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -819,7 +819,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/images/part1schody.webp",
+      panorama: "media/part1schody.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -850,7 +850,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 29,
       type: "equirectangular",
-      panorama: "media/images/1pietrsrod.webp",
+      panorama: "media/1pietrsrod.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -902,7 +902,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala21.webp",
+      panorama: "media/sala21.webp",
       hotSpots: [
         {
           pitch: 4,
@@ -919,7 +919,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 140,
       type: "equirectangular",
-      panorama: "media/images/przejscienoweskrzydl.webp",
+      panorama: "media/przejscienoweskrzydl.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -951,7 +951,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 137,
       type: "equirectangular",
-      panorama: "media/images/12pietrschody.webp",
+      panorama: "media/12pietrschody.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -982,7 +982,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 10,
       yaw: 43,
       type: "equirectangular",
-      panorama: "media/images/2pietrsrod.webp",
+      panorama: "media/2pietrsrod.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1034,7 +1034,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/images/2pietrnoweskrzydlschod.webp",
+      panorama: "media/2pietrnoweskrzydlschod.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -1066,7 +1066,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl1.webp",
+      panorama: "media/1pietrnoweskrzydl1.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -1097,7 +1097,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl2.webp",
+      panorama: "media/1pietrnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1121,7 +1121,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl2.webp",
+      panorama: "media/1pietrnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1145,7 +1145,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl3.webp",
+      panorama: "media/1pietrnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1183,7 +1183,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 190,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl3.webp",
+      panorama: "media/1pietrnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1221,7 +1221,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 4,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/images/sala33.webp",
+      panorama: "media/sala33.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -1238,7 +1238,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl4.webp",
+      panorama: "media/1pietrnoweskrzydl4.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1262,7 +1262,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/images/sala39.webp",
+      panorama: "media/sala39.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -1279,7 +1279,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/images/1pietrnoweskrzydl4.webp",
+      panorama: "media/1pietrnoweskrzydl4.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1303,7 +1303,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala40.webp",
+      panorama: "media/sala40.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1321,7 +1321,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/2pietrnoweskrzydl1.webp",
+      panorama: "media/2pietrnoweskrzydl1.webp",
       hotSpots: [
         {
           pitch: 3,
@@ -1345,7 +1345,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/images/sala57.webp",
+      panorama: "media/sala57.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1363,7 +1363,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 27,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl1.webp",
+      panorama: "media/parterstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1394,7 +1394,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sala8.webp",
+      panorama: "media/sala8.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1412,7 +1412,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 30,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl2.webp",
+      panorama: "media/parterstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1443,7 +1443,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/images/sala7.webp",
+      panorama: "media/sala7.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1460,7 +1460,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 70,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl3.webp",
+      panorama: "media/parterstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1491,7 +1491,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/images/sala6.webp",
+      panorama: "media/sala6.webp",
       hotSpots: [
         {
           pitch: 3,
@@ -1508,7 +1508,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl4.webp",
+      panorama: "media/parterstareskrzydl4.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -1553,7 +1553,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala4.webp",
+      panorama: "media/sala4.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1570,7 +1570,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/Sala2.webp",
+      panorama: "media/Sala2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1601,7 +1601,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/images/sala2a.webp",
+      panorama: "media/sala2a.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1618,7 +1618,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala2b.webp",
+      panorama: "media/sala2b.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1635,7 +1635,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl1.webp",
+      panorama: "media/parterstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1666,7 +1666,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sala8.webp",
+      panorama: "media/sala8.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1684,7 +1684,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl2.webp",
+      panorama: "media/parterstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1715,7 +1715,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/images/sala7.webp",
+      panorama: "media/sala7.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1732,7 +1732,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 260,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl3.webp",
+      panorama: "media/parterstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1763,7 +1763,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/images/sala6.webp",
+      panorama: "media/sala6.webp",
       hotSpots: [
         {
           pitch: 3,
@@ -1780,7 +1780,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/parterstareskrzydl4.webp",
+      panorama: "media/parterstareskrzydl4.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -1818,7 +1818,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 5,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/images/1pietrstareskrzydl1.webp",
+      panorama: "media/1pietrstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1851,7 +1851,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/images/1pietrstareskrzydl1.5.webp",
+      panorama: "media/1pietrstareskrzydl1.5.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1882,7 +1882,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala17.webp",
+      panorama: "media/sala17.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1899,7 +1899,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 5,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sala3.webp",
+      panorama: "media/sala3.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -1916,7 +1916,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 140,
       type: "equirectangular",
-      panorama: "media/images/sala16p.webp",
+      panorama: "media/sala16p.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1947,7 +1947,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/images/sala16a.webp",
+      panorama: "media/sala16a.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -1964,7 +1964,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala16b.webp",
+      panorama: "media/sala16b.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1981,7 +1981,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/images/1pietrstareskrzydl2.webp",
+      panorama: "media/1pietrstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2019,7 +2019,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 5,
       yaw: 20,
       type: "equirectangular",
-      panorama: "media/images/sala18.webp",
+      panorama: "media/sala18.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -2036,7 +2036,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/1pietrstareskrzydl3.webp",
+      panorama: "media/1pietrstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2067,7 +2067,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/images/sala19.webp",
+      panorama: "media/sala19.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2084,7 +2084,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala20.webp",
+      panorama: "media/sala20.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2101,7 +2101,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/images/konf2pietro.webp",
+      panorama: "media/konf2pietro.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2125,7 +2125,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/2pietrostareskrzyd1.webp",
+      panorama: "media/2pietrostareskrzyd1.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2156,7 +2156,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 160,
       type: "equirectangular",
-      panorama: "media/images/2pietrostareskrzyd1.webp",
+      panorama: "media/2pietrostareskrzyd1.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2187,7 +2187,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/images/sala45.webp",
+      panorama: "media/sala45.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2204,7 +2204,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/images/2pietrostareskrzyd2.webp",
+      panorama: "media/2pietrostareskrzyd2.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2242,7 +2242,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/images/2pietrostareskrzyd2.webp",
+      panorama: "media/2pietrostareskrzyd2.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2280,7 +2280,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/images/sala46.webp",
+      panorama: "media/sala46.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2297,7 +2297,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/images/sala47.webp",
+      panorama: "media/sala47.webp",
       hotSpots: [
         {
           pitch: 1,
@@ -2314,7 +2314,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 5,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/images/olimp1.webp",
+      panorama: "media/olimp1.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -2352,7 +2352,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 10,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/images/sala59.webp",
+      panorama: "media/sala59.webp",
       hotSpots: [
         {
           pitch: 7,
@@ -2369,7 +2369,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 5,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/images/sala60.webp",
+      panorama: "media/sala60.webp",
       hotSpots: [
         {
           pitch: 7,
@@ -2386,7 +2386,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/images/olimp2.webp",
+      panorama: "media/olimp2.webp",
       hotSpots: [
         {
           pitch: 0,
