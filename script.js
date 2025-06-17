@@ -24,7 +24,12 @@ fetch("version.json")
       document.querySelectorAll(".environment-banner").forEach((el) => el.remove());
       const banner = document.createElement("div");
       banner.className = `environment-banner ${env}-banner text-scalable`;
-      banner.innerHTML = `${label} – <a href="${data.runUrl}" target="_blank" rel="noopener noreferrer">${version}</a> – Build: ${buildDate} UTC`;
+      const a = document.createElement('a');
+        a.href = data.runUrl;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = version;
+        banner.append(` Preview Version`, a, ` - Build: ${buildDate} UTC`);
       document.body.appendChild(banner);
     } else {
       showBanner(`${label} – ${version} – Build: ${buildDate} UTC`, env);
@@ -837,7 +842,6 @@ const viewer = pannellum.viewer("panorama", {
       ],
     },
     "1pietr-srod": {
-      //Working here (long ass code)
       title: "I piętro",
       hfov: 180,
       pitch: 0,
