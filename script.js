@@ -2,6 +2,9 @@ const BUILD_INFO = {
   env: "production",
   buildDate: "__BUILD_DATE__",
 };
+// This is modified by `sed` command in the Cloudflare build environment
+// It is left undefined purposefuly
+
 
 function showBanner(text, env) {
   document.querySelectorAll(".environment-banner").forEach((el) => el.remove());
@@ -52,7 +55,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/0portierniawejscie-lowscaled.jpg",
+      panorama: "media/lowscaled_images/0portierniawejscie-lowscaled.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -75,7 +78,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-wejscie-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-wejscie-lowscaled.webp",
       hotSpots: [
         {
           pitch: 180,
@@ -127,7 +130,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 135,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/gab-pedag-lowscaled.jpg",
+      panorama: "media/lowscaled_images/gab-pedag-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -165,7 +168,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala-gim-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala-gim-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -189,7 +192,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-sala-gim-wejscie-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-sala-gim-wejscie-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -213,7 +216,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/salagimn1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/salagimn1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -244,7 +247,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/salagimn-lowscaled.jpg",
+      panorama: "media/lowscaled_images/salagimn-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -261,7 +264,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/nieb-dyw-lowscaled.jpg",
+      panorama: "media/lowscaled_images/nieb-dyw-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -292,7 +295,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sekretariat-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sekretariat-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -316,7 +319,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -70,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/dyrektor-lowscaled.jpg",
+      panorama: "media/lowscaled_images/dyrektor-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -334,7 +337,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sek1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sek1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -365,7 +368,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sekretariat3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sekretariat3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -403,7 +406,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -420,7 +423,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/wicedyr-lowscaled.jpg",
+      panorama: "media/lowscaled_images/wicedyr-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -437,7 +440,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/skarbnik-lowscaled.jpg",
+      panorama: "media/lowscaled_images/skarbnik-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -455,7 +458,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sklepik-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sklepik-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -472,7 +475,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-biblioteka-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-biblioteka-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -503,7 +506,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/bibl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/bibl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -527,7 +530,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/biblioteka2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/biblioteka2-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -545,7 +548,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-noweskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -15,
@@ -583,7 +586,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 200,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala24-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala24-lowscaled.webp",
       hotSpots: [
         {
           pitch: -4,
@@ -600,7 +603,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 55,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-noweskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -631,7 +634,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 80,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala25-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala25-lowscaled.webp",
       hotSpots: [
         {
           pitch: -4,
@@ -648,7 +651,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-noweskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -679,7 +682,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala26-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala26-lowscaled.webp",
       hotSpots: [
         {
           pitch: -4,
@@ -696,7 +699,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/noweskrzydl-lacznik1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -6,
@@ -720,7 +723,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -10,
       yaw: -60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/noweskrzydl-lacznik2-lowscaled.webp",
       hotSpots: [
         {
           pitch: -20,
@@ -744,7 +747,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -20,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/noweskrzydl-lacznik3-lowscaled.webp",
       hotSpots: [
         {
           pitch: -10,
@@ -768,7 +771,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/noweskrzydl-lacznik4-lowscaled.webp",
       hotSpots: [
         {
           pitch: -10,
@@ -799,7 +802,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-szatnie-lowscaled.jpg",
+      panorama: "media/lowscaled_images/noweskrzydl-szatnie-lowscaled.webp",
       hotSpots: [
         {
           pitch: 5,
@@ -816,7 +819,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-1-schody-lowscaled.jpg",
+      panorama: "media/lowscaled_images/part-1-schody-lowscaled.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -847,7 +850,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 29,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-srod-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-srod-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -899,7 +902,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala21-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala21-lowscaled.webp",
       hotSpots: [
         {
           pitch: -4,
@@ -916,7 +919,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -140,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/przejscie-noweskrzydl-lowscaled.jpg",
+      panorama: "media/lowscaled_images/przejscie-noweskrzydl-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -948,7 +951,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 137,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1-2pietr-schody-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1-2pietr-schody-lowscaled.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -979,7 +982,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 10,
       yaw: 43,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-srod-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietr-srod-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1031,7 +1034,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-noweskrzydl-schod-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietr-noweskrzydl-schod-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -1063,7 +1066,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 15,
@@ -1094,7 +1097,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1118,7 +1121,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1142,7 +1145,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1180,7 +1183,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 190,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1218,7 +1221,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 4,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala33-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala33-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -1235,7 +1238,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1259,7 +1262,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala39-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala39-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -1276,7 +1279,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1300,7 +1303,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala40-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala40-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1318,7 +1321,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietr-noweskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -3,
@@ -1342,7 +1345,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala57-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala57-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1360,7 +1363,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -27,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1391,7 +1394,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala8-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala8-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1409,7 +1412,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1440,7 +1443,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala7-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala7-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1457,7 +1460,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 70,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1488,7 +1491,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala6-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala6-lowscaled.webp",
       hotSpots: [
         {
           pitch: -3,
@@ -1505,7 +1508,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -1550,7 +1553,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala4-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1567,7 +1570,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/Sala2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/Sala2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1598,7 +1601,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala2a-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala2a-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1615,7 +1618,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala2b-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala2b-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1632,7 +1635,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1663,7 +1666,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala8-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala8-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1681,7 +1684,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1712,7 +1715,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala7-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala7-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1729,7 +1732,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 260,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1760,7 +1763,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala6-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala6-lowscaled.webp",
       hotSpots: [
         {
           pitch: -3,
@@ -1777,7 +1780,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.jpg",
+      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.webp",
       hotSpots: [
         {
           pitch: 20,
@@ -1815,7 +1818,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -5,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-stareskrzydl1-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1848,7 +1851,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl1.5-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-stareskrzydl1.5-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1879,7 +1882,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala17-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala17-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1896,7 +1899,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -5,
       yaw: -100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala3-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -1913,7 +1916,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 140,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16p-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala16p-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1944,7 +1947,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16a-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala16a-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -1961,7 +1964,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16b-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala16b-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1978,7 +1981,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-stareskrzydl2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2016,7 +2019,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -5,
       yaw: -20,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala18-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala18-lowscaled.webp",
       hotSpots: [
         {
           pitch: -5,
@@ -2033,7 +2036,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/lowscaled_images/1pietr-stareskrzydl3-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2064,7 +2067,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala19-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala19-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2081,7 +2084,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala20-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala20-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2098,7 +2101,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/konf2pietro-lowscaled.jpg",
+      panorama: "media/lowscaled_images/konf2pietro-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2122,7 +2125,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2153,7 +2156,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 160,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2184,7 +2187,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala45-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala45-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2201,7 +2204,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2239,7 +2242,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: -130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2277,7 +2280,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala46-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala46-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2294,7 +2297,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala47-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala47-lowscaled.webp",
       hotSpots: [
         {
           pitch: -1,
@@ -2311,7 +2314,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -5,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/olimp1-lowscaled.jpg",
+      panorama: "media/lowscaled_images/olimp1-lowscaled.webp",
       hotSpots: [
         {
           pitch: -20,
@@ -2349,7 +2352,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -10,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala59-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala59-lowscaled.webp",
       hotSpots: [
         {
           pitch: -7,
@@ -2366,7 +2369,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: -5,
       yaw: -150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala60-lowscaled.jpg",
+      panorama: "media/lowscaled_images/sala60-lowscaled.webp",
       hotSpots: [
         {
           pitch: -7,
@@ -2383,7 +2386,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/olimp2-lowscaled.jpg",
+      panorama: "media/lowscaled_images/olimp2-lowscaled.webp",
       hotSpots: [
         {
           pitch: 0,
