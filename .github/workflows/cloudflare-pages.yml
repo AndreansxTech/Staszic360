@@ -1,0 +1,10 @@
+project_name: staszic360
+production_branch: main
+
+build_config:
+
+  root: .
+
+  command: npm ci && npm run build
+
+  destination: dist
