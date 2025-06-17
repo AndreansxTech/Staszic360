@@ -2587,7 +2587,7 @@ document.getElementById("increaseText").addEventListener("click", function () {
 });
 
 document.getElementById("decreaseText").addEventListener("click", function () {
-  if (currentTextSize  10 >= MINTEXTSIZE) {
+  if (currentTextSize - 10 >= MINTEXTSIZE) {
     currentTextSize = 10;
     document.body.setAttribute("datatextscale", currentTextSize);
     console.log("Zmniejszono rozmiar tekstu do:", currentTextSize);
