@@ -35,7 +35,7 @@ Cały projekt jest realizowany przez grupę trzech uczniów szkoły, w pełni be
 
 👉 [Cloudflare Pages](https://staszic360.pages.dev) – wersja produkcyjna  
 
-👉 [GitHub Pages](https://andreansxtech.github.io/Staszic360/) – wersja preview  
+👉 [GitHub Pages](https://andreansx.github.io/Staszic360/) – wersja preview  
 
 👉 [Spacer.1lo.pl](http://spacer.1lo.pl/) ( Brak SSL/TLS🔓 ) - Wersja finalna, rzadko aktualizowana
 
@@ -101,18 +101,20 @@ Staszic360 został zaprojektowany z myślą o szerokiej dostępności i inkluzyw
 
 ## Weryfikacja podpisów
 
-Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą GPG, aby zapewnić ich integralność i autentyczność. Oznacza to, że możesz mieć pewność, iż pliki te nie zostały zmodyfikowane przez osoby trzecie od momentu ich podpisania przez nas. Należy mieć na uwadze, że weryfikacja sygnatur nie ma tutaj takiego charakteru, jak przy zkompilowanych programach gdzie krytyczna jest zgodność z kodem źródłowym.  
+Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą GPG, aby zapewnić ich integralność i autentyczność. Oznacza to, że możesz mieć pewność, iż pliki te nie zostały zmodyfikowane przez osoby trzecie od momentu ich podpisania przez nas. Należy mieć na uwadze, że weryfikacja sygnatur nie ma tutaj takiego charakteru, jak przy skompilowanych programach gdzie krytyczna jest zgodność z kodem źródłowym. Podpisuję te pliki, ponieważ jest to dobra okazja na poćwiczenie bardziej realnego certyfikowania plików. 
 
-Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi.
+Osoba podpisująca: **Michał Bańkowski**
 
-**Klucz publiczny**: [AndreansxTech_0x1A5C5CDB_public.asc](./AndreansxTech_0x1A5C5CDB_public.asc)
+Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi, gdyż od ostatniego wydania strony, pliki mogły ulec zmianie.
 
-**Odcisk cyfrowy klucza**: 9282 DF55 1096 3273 6618  5B2E 4C80 939B 1A5C 5CDB
+**Klucz publiczny**: **[Andreansx_public_key.asc](./Andreansx_public_key.asc)**
+
+**Odcisk cyfrowy klucza**:  **B5DFA80CFB9BEA3BFD11B4C62B20CCED43048B3E**
 
 **Importowanie klucza (wiersz poleceń):**
 
 ```bash
-gpg --import AndreansxTech_0x1A5C5CDB_public.asc
+gpg --import Andreansx_public_key.asc
 ```
 **Weryfikacja podpisów**
 ```bash

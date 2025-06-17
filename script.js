@@ -1,13 +1,16 @@
-const BUILD_INFO = {
+const BUILDINFO = {
   env: "production",
-  buildDate: "__BUILD_DATE__",
+  buildDate: "BUILDDATE",
 };
+// This is modified by `sed` command in the Cloudflare build environment
+// It is left undefined purposefuly
+
 
 function showBanner(text, env) {
-  document.querySelectorAll(".environment-banner").forEach((el) => el.remove());
+  document.querySelectorAll(".environmentbanner").forEach((el) => el.remove());
 
   const banner = document.createElement("div");
-  banner.className = `environment-banner ${env}-banner text-scalable`;
+  banner.className = `environmentbanner ${env}banner textscalable`;
   banner.textContent = text;
   document.body.appendChild(banner);
 }
@@ -21,10 +24,15 @@ fetch("version.json")
     const label = env === "preview" ? "Preview Version" : "Wersja Produkcyjna";
     if (env === "preview" && data.runUrl) {
       // Remove any existing banners and show clickable preview banner
-      document.querySelectorAll(".environment-banner").forEach((el) => el.remove());
+      document.querySelectorAll(".environmentbanner").forEach((el) => el.remove());
       const banner = document.createElement("div");
-      banner.className = `environment-banner ${env}-banner text-scalable`;
-      banner.innerHTML = `${label} – <a href="${data.runUrl}" target="_blank" rel="noopener noreferrer">${version}</a> – Build: ${buildDate} UTC`;
+      banner.className = `environmentbanner ${env}banner textscalable`;
+      const a = document.createElement('a');
+        a.href = data.runUrl;
+        a.target = 'blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = version;
+        banner.append(` Preview Version`, a, `  Build: ${buildDate} UTC`);
       document.body.appendChild(banner);
     } else {
       showBanner(`${label} – ${version} – Build: ${buildDate} UTC`, env);
@@ -45,50 +53,50 @@ const viewer = pannellum.viewer("panorama", {
       title: "Portiernia",
       hfov: 180,
       pitch: 0,
-      yaw: -30,
+      yaw: 30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/0portierniawejscie-lowscaled.jpg",
+      panorama: "media/images/0portierniawejscie.webp",
       hotSpots: [
         {
           pitch: 5,
-          yaw: -10,
+          yaw: 10,
           type: "info",
           text: "Portiernia",
         },
         {
           pitch: 5,
-          yaw: -35,
+          yaw: 35,
           type: "scene",
           text: "Przejdź do Korytarza Głównego",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
       ],
     },
-    "part-srod": {
+    "partsrod": {
       title: "Korytarz Główny",
       hfov: 180,
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-wejscie-lowscaled.jpg",
+      panorama: "media/images/parterwejscie.webp",
       hotSpots: [
         {
           pitch: 180,
-          yaw: -170,
+          yaw: 170,
           type: "scene",
           text: "Przejdź z powrotem do portierni",
           sceneId: "portiernia",
         },
         {
           pitch: 0,
-          yaw: -150,
+          yaw: 150,
           type: "scene",
           text: "Biblioteka",
           sceneId: "biblioteka",
         },
         {
           pitch: 0,
-          yaw: -268,
+          yaw: 268,
           type: "scene",
           text: "Nowe skrzydło",
           sceneId: "korpuch",
@@ -105,14 +113,14 @@ const viewer = pannellum.viewer("panorama", {
           yaw: 180,
           type: "scene",
           text: "Na pierwsze piętro",
-          sceneId: "part-1-schody",
+          sceneId: "part1schody",
         },
         {
           pitch: 0,
-          yaw: -90,
+          yaw: 90,
           type: "scene",
           text: "Stare skrzydło",
-          sceneId: "parter-stareskrzydl1",
+          sceneId: "parterstareskrzydl1",
         },
       ],
     },
@@ -122,7 +130,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 135,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/gab-pedag-lowscaled.jpg",
+      panorama: "media/images/gabpedag.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -136,62 +144,62 @@ const viewer = pannellum.viewer("panorama", {
           yaw: 80,
           type: "scene",
           text: "Przejdź z powrotem do Korytarza Głównego",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
         {
           pitch: 15,
           yaw: 170,
           type: "scene",
           text: "Do góry",
-          sceneId: "part-noweskrzydl1",
+          sceneId: "partnoweskrzydl1",
         },
         {
-          pitch: -2,
+          pitch: 2,
           yaw: 150,
           type: "scene",
           text: "Przejście",
-          sceneId: "part-sala-gim-wejscie",
+          sceneId: "partsalagimwejscie",
         },
       ],
     },
-    "sala-gim": {
+    "salagim": {
       title: "Sala gimnastyczna mała",
       hfov: 180,
       pitch: 0,
-      yaw: -100,
+      yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala-gim-lowscaled.jpg",
+      panorama: "media/images/salagim.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 170,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "part-sala-gim-wejscie",
+          sceneId: "partsalagimwejscie",
         },
         {
           pitch: 0,
-          yaw: -70,
+          yaw: 70,
           type: "scene",
           text: "Wróć na korytarz",
           sceneId: "salagimn1",
         },
       ],
     },
-    "part-sala-gim-wejscie": {
+    "partsalagimwejscie": {
       title: "Korytarz",
       hfov: 180,
       pitch: 0,
-      yaw: -100,
+      yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-sala-gim-wejscie-lowscaled.jpg",
+      panorama: "media/images/partsalagimwejscie.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -87,
+          yaw: 87,
           type: "scene",
           text: "Przejdź",
-          sceneId: "sala-gim",
+          sceneId: "salagim",
         },
         {
           pitch: 0,
@@ -208,25 +216,25 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/salagimn1-lowscaled.jpg",
+      panorama: "media/images/salagimn1.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 52,
           type: "scene",
           text: "Przejdź",
-          sceneId: "sala-gim",
+          sceneId: "salagim",
         },
         {
           pitch: 0,
           yaw: 139,
           type: "scene",
           text: "Na łącznik",
-          sceneId: "noweskrzydl-lacznik4",
+          sceneId: "noweskrzydllacznik4",
         },
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Na dużą salę gimnatyczną",
           sceneId: "salagimn",
@@ -239,7 +247,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/salagimn-lowscaled.jpg",
+      panorama: "media/images/salagimn.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -256,10 +264,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/nieb-dyw-lowscaled.jpg",
+      panorama: "media/images/niebdyw.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 95,
           type: "scene",
           text: "Sklepik Szkolny",
@@ -273,7 +281,7 @@ const viewer = pannellum.viewer("panorama", {
           sceneId: "korpuch",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 70,
           type: "scene",
           sceneId: "sekretariat1",
@@ -287,17 +295,17 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sekretariat-lowscaled.jpg",
+      panorama: "media/images/sekretariat.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 160,
           type: "scene",
           text: "Biuro pani Dyrektor",
           sceneId: "dyrektor",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 50,
           type: "scene",
           text: "Powrót",
@@ -309,12 +317,12 @@ const viewer = pannellum.viewer("panorama", {
       title: "Gabinet pani Dyrektor",
       hfov: 180,
       pitch: 0,
-      yaw: -70,
+      yaw: 70,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/dyrektor-lowscaled.jpg",
+      panorama: "media/images/dyrektor.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 120,
           type: "scene",
           text: "Sekretariat",
@@ -329,7 +337,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sek1-lowscaled.jpg",
+      panorama: "media/images/sek1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -340,7 +348,7 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -20,
+          yaw: 20,
           type: "scene",
           text: "Sekretariat",
           sceneId: "sekretariat",
@@ -360,31 +368,31 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sekretariat3-lowscaled.jpg",
+      panorama: "media/images/sekretariat3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -72,
+          yaw: 72,
           type: "scene",
           text: "Przejdź",
           sceneId: "sekretariat1",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 90,
           type: "scene",
           text: "Gabinet wicedyrektora",
           sceneId: "wicedyr",
         },
         {
-          pitch: -5,
-          yaw: -45,
+          pitch: 5,
+          yaw: 45,
           type: "scene",
           text: "Księgowość",
           sceneId: "skarbnik",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 113,
           type: "scene",
           text: "Sala numer 1",
@@ -398,10 +406,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala1-lowscaled.jpg",
+      panorama: "media/images/sala1.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 160,
           type: "scene",
           text: "Powrót",
@@ -415,11 +423,11 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/wicedyr-lowscaled.jpg",
+      panorama: "media/images/wicedyr.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -90,
+          pitch: 5,
+          yaw: 90,
           type: "scene",
           text: "Na korytarz",
           sceneId: "sekretariat3",
@@ -432,11 +440,11 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/skarbnik-lowscaled.jpg",
+      panorama: "media/images/skarbnik.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -40,
+          pitch: 5,
+          yaw: 40,
           type: "scene",
           text: "Na korytarz",
           sceneId: "sekretariat3",
@@ -448,12 +456,12 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sklepik szkolny",
       hfov: 180,
       pitch: 0,
-      yaw: -30,
+      yaw: 30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sklepik-lowscaled.jpg",
+      panorama: "media/images/sklepik.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 160,
           type: "scene",
           text: "Powrót",
@@ -467,10 +475,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-biblioteka-lowscaled.jpg",
+      panorama: "media/images/partbiblioteka.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 217,
           type: "scene",
           text: "Biblioteka",
@@ -481,14 +489,14 @@ const viewer = pannellum.viewer("panorama", {
           yaw: 15,
           type: "scene",
           text: "Powrót do Korytarza Głównego",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
         {
           pitch: 10,
           yaw: 70,
           type: "scene",
           text: "Powrót do Korytarza Głównego",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
       ],
     },
@@ -498,7 +506,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/bibl1-lowscaled.jpg",
+      panorama: "media/images/bibl1.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -508,7 +516,7 @@ const viewer = pannellum.viewer("panorama", {
           sceneId: "biblioteka",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 255,
           type: "scene",
           text: "Przejdź",
@@ -522,11 +530,11 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/biblioteka2-lowscaled.jpg",
+      panorama: "media/images/biblioteka2.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -10,
+          pitch: 5,
+          yaw: 10,
           type: "scene",
           text: "Powrót",
           sceneId: "biblioteka1",
@@ -534,31 +542,31 @@ const viewer = pannellum.viewer("panorama", {
       ],
     },
 
-    "part-noweskrzydl1": {
+    "partnoweskrzydl1": {
       title: "Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/images/partnoweskrzydl1.webp",
       hotSpots: [
         {
-          pitch: -15,
-          yaw: -140,
+          pitch: 15,
+          yaw: 140,
           type: "scene",
           text: "Na dół",
           sceneId: "korpuch",
         },
         {
-          pitch: -3,
+          pitch: 3,
           yaw: 10,
           type: "scene",
           text: "Idź dalej",
-          sceneId: "part-noweskrzydl2",
+          sceneId: "partnoweskrzydl2",
         },
         {
           pitch: 0,
-          yaw: -20,
+          yaw: 20,
           type: "scene",
           text: "Sala numer 24",
           sceneId: "sala24",
@@ -568,7 +576,7 @@ const viewer = pannellum.viewer("panorama", {
           yaw: 250,
           type: "scene",
           text: "Na górę",
-          sceneId: "przejscie-noweskrzydl",
+          sceneId: "przejscienoweskrzydl",
         },
       ],
     },
@@ -578,38 +586,38 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 200,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala24-lowscaled.jpg",
+      panorama: "media/images/sala24.webp",
       hotSpots: [
         {
-          pitch: -4,
-          yaw: -107,
+          pitch: 4,
+          yaw: 107,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "part-noweskrzydl1",
+          sceneId: "partnoweskrzydl1",
         },
       ],
     },
-    "part-noweskrzydl2": {
+    "partnoweskrzydl2": {
       title: "Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 55,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/images/partnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 52,
           type: "scene",
           text: "Idź dalej",
-          sceneId: "part-noweskrzydl3",
+          sceneId: "partnoweskrzydl3",
         },
         {
-          pitch: -5,
-          yaw: -130,
+          pitch: 5,
+          yaw: 130,
           type: "scene",
           text: "Wróć",
-          sceneId: "part-noweskrzydl1",
+          sceneId: "partnoweskrzydl1",
         },
         {
           pitch: 0,
@@ -626,42 +634,42 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 80,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala25-lowscaled.jpg",
+      panorama: "media/images/sala25.webp",
       hotSpots: [
         {
-          pitch: -4,
-          yaw: -5,
+          pitch: 4,
+          yaw: 5,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "part-noweskrzydl2",
+          sceneId: "partnoweskrzydl2",
         },
       ],
     },
-    "part-noweskrzydl3": {
+    "partnoweskrzydl3": {
       title: "Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/images/partnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 58,
           type: "scene",
           text: "Łącznik",
-          sceneId: "noweskrzydl-lacznik1",
+          sceneId: "noweskrzydllacznik1",
         },
         {
           pitch: 0,
-          yaw: -120,
+          yaw: 120,
           type: "scene",
           text: "Wróć",
-          sceneId: "part-noweskrzydl2",
+          sceneId: "partnoweskrzydl2",
         },
         {
           pitch: 0,
-          yaw: -22,
+          yaw: 22,
           type: "scene",
           text: "Sala numer 26",
           sceneId: "sala26",
@@ -674,211 +682,210 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala26-lowscaled.jpg",
+      panorama: "media/images/sala26.webp",
       hotSpots: [
         {
-          pitch: -4,
-          yaw: -75,
+          pitch: 4,
+          yaw: 75,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "part-noweskrzydl3",
+          sceneId: "partnoweskrzydl3",
         },
       ],
     },
-    "noweskrzydl-lacznik1": {
+    "noweskrzydllacznik1": {
       title: "Łącznik",
       hfov: 180,
       pitch: 0,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik1-lowscaled.jpg",
+      panorama: "media/images/noweskrzydllacznik1.webp",
       hotSpots: [
         {
-          pitch: -6,
-          yaw: -30,
+          pitch: 6,
+          yaw: 30,
           type: "scene",
           text: "Idź dalej",
-          sceneId: "noweskrzydl-lacznik2",
+          sceneId: "noweskrzydllacznik2",
         },
         {
           pitch: 0,
           yaw: 60,
           type: "scene",
           text: "Wróć",
-          sceneId: "part-noweskrzydl3",
+          sceneId: "partnoweskrzydl3",
         },
       ],
     },
-    "noweskrzydl-lacznik2": {
+    "noweskrzydllacznik2": {
       title: "Łącznik",
       hfov: 180,
-      pitch: -10,
-      yaw: -60,
+      pitch: 10,
+      yaw: 60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik2-lowscaled.jpg",
+      panorama: "media/images/noweskrzydllacznik2.webp",
       hotSpots: [
         {
-          pitch: -20,
-          yaw: -40,
+          pitch: 20,
+          yaw: 40,
           type: "scene",
           text: "Na dół",
-          sceneId: "noweskrzydl-lacznik3",
+          sceneId: "noweskrzydllacznik3",
         },
         {
           pitch: 5,
-          yaw: -70,
+          yaw: 70,
           type: "scene",
           text: "Do góry",
-          sceneId: "noweskrzydl-lacznik1",
+          sceneId: "noweskrzydllacznik1",
         },
       ],
     },
-    "noweskrzydl-lacznik3": {
+    "noweskrzydllacznik3": {
       title: "Łącznik",
       hfov: 180,
       pitch: 0,
-      yaw: -20,
+      yaw: 20,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik3-lowscaled.jpg",
+      panorama: "media/images/noweskrzydllacznik3.webp",
       hotSpots: [
         {
-          pitch: -10,
-          yaw: -20,
+          pitch: 10,
+          yaw: 20,
           type: "scene",
           text: "Na dół",
-          sceneId: "noweskrzydl-lacznik4",
+          sceneId: "noweskrzydllacznik4",
         },
         {
           pitch: 10,
-          yaw: -40,
+          yaw: 40,
           type: "scene",
           text: "Do góry",
-          sceneId: "noweskrzydl-lacznik2",
+          sceneId: "noweskrzydllacznik2",
         },
       ],
     },
-    "noweskrzydl-lacznik4": {
+    "noweskrzydllacznik4": {
       title: "Łącznik",
       hfov: 180,
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-lacznik4-lowscaled.jpg",
+      panorama: "media/images/noweskrzydllacznik4.webp",
       hotSpots: [
         {
-          pitch: -10,
+          pitch: 10,
           yaw: 110,
           type: "scene",
           text: "Do szatni",
-          sceneId: "noweskrzydl-szatnie",
+          sceneId: "noweskrzydlszatnie",
         },
         {
           pitch: 10,
           yaw: 80,
           type: "scene",
           text: "Do góry",
-          sceneId: "noweskrzydl-lacznik3",
+          sceneId: "noweskrzydllacznik3",
         },
         {
           pitch: 0,
-          yaw: -110,
+          yaw: 110,
           type: "scene",
           text: "Do sali gimnatycznej",
           sceneId: "salagimn1",
         },
       ],
     },
-    "noweskrzydl-szatnie": {
+    "noweskrzydlszatnie": {
       title: "Szatnie",
       hfov: 180,
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/noweskrzydl-szatnie-lowscaled.jpg",
+      panorama: "media/images/noweskrzydlszatnie.webp",
       hotSpots: [
         {
           pitch: 5,
-          yaw: -70,
+          yaw: 70,
           type: "scene",
           text: "Do góry",
-          sceneId: "noweskrzydl-lacznik4",
+          sceneId: "noweskrzydllacznik4",
         },
       ],
     },
-    "part-1-schody": {
+    "part1schody": {
       title: "Schody na I piętro",
       hfov: 180,
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/part-1-schody-lowscaled.jpg",
+      panorama: "media/images/part1schody.webp",
       hotSpots: [
         {
           pitch: 15,
           yaw: 150,
           type: "scene",
           text: " Na I piętro",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
         {
           pitch: 15,
           yaw: 110,
           type: "scene",
           text: " Na I piętro",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
         {
-          pitch: -15,
+          pitch: 15,
           yaw: 130,
           type: "scene",
           text: "Wróć",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
       ],
     },
-    "1pietr-srod": {
-      //Working here (long ass code)
+    "1pietrsrod": {
       title: "I piętro",
       hfov: 180,
       pitch: 0,
       yaw: 29,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-srod-lowscaled.jpg",
+      panorama: "media/images/1pietrsrod.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 0,
           type: "scene",
           text: "Wróć na dół",
-          sceneId: "part-1-schody",
+          sceneId: "part1schody",
         },
         {
           pitch: 0,
           yaw: 60,
           type: "scene",
           text: "Wróć na dół",
-          sceneId: "part-1-schody",
+          sceneId: "part1schody",
         },
         {
           pitch: 5,
           yaw: 30,
           type: "scene",
           text: "Na II piętro",
-          sceneId: "1-2pietr-schody",
+          sceneId: "12pietrschody",
         },
         {
           pitch: 0,
           yaw: 120,
           type: "scene",
           text: "Stare skrzydło",
-          sceneId: "1pietr-stareskrzydl3",
+          sceneId: "1pietrstareskrzydl3",
         },
         {
           pitch: 0,
-          yaw: -60,
+          yaw: 60,
           type: "scene",
           text: "Do nowego skrzydła",
-          sceneId: "przejscie-noweskrzydl",
+          sceneId: "przejscienoweskrzydl",
         },
         {
           pitch: 0,
@@ -895,101 +902,101 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala21-lowscaled.jpg",
+      panorama: "media/images/sala21.webp",
       hotSpots: [
         {
-          pitch: -4,
+          pitch: 4,
           yaw: 15,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
       ],
     },
-    "przejscie-noweskrzydl": {
+    "przejscienoweskrzydl": {
       title: "Schody na I piętro",
       hfov: 180,
       pitch: 0,
-      yaw: -140,
+      yaw: 140,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/przejscie-noweskrzydl-lowscaled.jpg",
+      panorama: "media/images/przejscienoweskrzydl.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -55,
+          yaw: 55,
           type: "scene",
           text: "Do starego skrzydła",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
         {
-          pitch: -15,
+          pitch: 15,
           yaw: 200,
           type: "scene",
           text: "Na dół",
-          sceneId: "part-noweskrzydl1",
+          sceneId: "partnoweskrzydl1",
         },
         {
           pitch: 20,
           yaw: 225,
           type: "scene",
           text: "Na górę",
-          sceneId: "1pietr-noweskrzydl1",
+          sceneId: "1pietrnoweskrzydl1",
         },
       ],
     },
 
-    "1-2pietr-schody": {
+    "12pietrschody": {
       title: "Schody na II piętro",
       hfov: 180,
       pitch: 0,
       yaw: 137,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1-2pietr-schody-lowscaled.jpg",
+      panorama: "media/images/12pietrschody.webp",
       hotSpots: [
         {
           pitch: 15,
           yaw: 155,
           type: "scene",
           text: " Na II piętro",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
           pitch: 15,
           yaw: 117,
           type: "scene",
           text: " Na II piętro",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
-          pitch: -15,
+          pitch: 15,
           yaw: 137,
           type: "scene",
           text: "Wróć",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
       ],
     },
-    "2pietr-srod": {
+    "2pietrsrod": {
       title: "II piętro",
       hfov: 180,
       pitch: 10,
       yaw: 43,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-srod-lowscaled.jpg",
+      panorama: "media/images/2pietrsrod.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 70,
           type: "scene",
           text: "Wróć na dół",
-          sceneId: "1-2pietr-schody",
+          sceneId: "12pietrschody",
         },
         {
           pitch: 0,
           yaw: 25,
           type: "scene",
           text: "Wróć na dół",
-          sceneId: "1-2pietr-schody",
+          sceneId: "12pietrschody",
         },
         {
           pitch: 0,
@@ -1000,7 +1007,7 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -67,
+          yaw: 67,
           type: "scene",
           text: "Sala konferencyjna",
           sceneId: "konf2pietro",
@@ -1014,149 +1021,149 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -40,
+          yaw: 40,
           type: "scene",
           text: "Do nowego skrzydła",
-          sceneId: "2pietr-noweskrzydl-schod",
+          sceneId: "2pietrnoweskrzydlschod",
         },
       ],
     },
-    "2pietr-noweskrzydl-schod": {
+    "2pietrnoweskrzydlschod": {
       title: "Przejście do nowego skrzydła",
       hfov: 180,
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-noweskrzydl-schod-lowscaled.jpg",
+      panorama: "media/images/2pietrnoweskrzydlschod.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -130,
+          pitch: 5,
+          yaw: 130,
           type: "scene",
           text: "Do starego skrzydła",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
           pitch: 10,
           yaw: 143,
           type: "scene",
           text: "Na górę",
-          sceneId: "2pietr-noweskrzydl1",
+          sceneId: "2pietrnoweskrzydl1",
         },
         {
-          pitch: -20,
+          pitch: 20,
           yaw: 120,
           type: "scene",
           text: "Na dół",
-          sceneId: "1pietr-noweskrzydl1",
+          sceneId: "1pietrnoweskrzydl1",
         },
       ],
     },
-    "1pietr-noweskrzydl1": {
+    "1pietrnoweskrzydl1": {
       //ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl1.webp",
       hotSpots: [
         {
           pitch: 15,
           yaw: 152,
           type: "scene",
           text: "Na górę",
-          sceneId: "2pietr-noweskrzydl-schod",
+          sceneId: "2pietrnoweskrzydlschod",
         },
         {
           pitch: 0,
           yaw: 200,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl2",
+          sceneId: "1pietrnoweskrzydl2",
         },
         {
-          pitch: -20,
+          pitch: 20,
           yaw: 130,
           type: "scene",
           text: "Na dół",
-          sceneId: "przejscie-noweskrzydl",
+          sceneId: "przejscienoweskrzydl",
         },
       ],
     },
-    "1pietr-noweskrzydl2": {
+    "1pietrnoweskrzydl2": {
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl1",
+          sceneId: "1pietrnoweskrzydl1",
         },
         {
           pitch: 0,
           yaw: 140,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl3",
+          sceneId: "1pietrnoweskrzydl3",
         },
       ],
     },
-    "1pietr-noweskrzydl2,2": {
+    "1pietrnoweskrzydl2,2": {
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl2-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl1",
+          sceneId: "1pietrnoweskrzydl1",
         },
         {
           pitch: 0,
           yaw: 140,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl3",
+          sceneId: "1pietrnoweskrzydl3",
         },
       ],
     },
-    "1pietr-noweskrzydl3": {
+    "1pietrnoweskrzydl3": {
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -160,
+          yaw: 160,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl2,2",
+          sceneId: "1pietrnoweskrzydl2,2",
         },
         {
           pitch: 0,
           yaw: 20,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl4",
+          sceneId: "1pietrnoweskrzydl4",
         },
         {
           pitch: 5,
-          yaw: -6,
+          yaw: 6,
           type: "scene",
           text: "Sala numer 40",
           sceneId: "sala40",
@@ -1170,31 +1177,31 @@ const viewer = pannellum.viewer("panorama", {
         },
       ],
     },
-    "1pietr-noweskrzydl3,3": {
+    "1pietrnoweskrzydl3,3": {
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 190,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl3-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -160,
+          yaw: 160,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl2,2",
+          sceneId: "1pietrnoweskrzydl2,2",
         },
         {
           pitch: 0,
           yaw: 20,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl4",
+          sceneId: "1pietrnoweskrzydl4",
         },
         {
           pitch: 5,
-          yaw: -6,
+          yaw: 6,
           type: "scene",
           text: "Sala numer 40",
           sceneId: "sala40",
@@ -1214,31 +1221,31 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 4,
       yaw: 40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala33-lowscaled.jpg",
+      panorama: "media/images/sala33.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 80,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-noweskrzydl3,3",
+          sceneId: "1pietrnoweskrzydl3,3",
         },
       ],
     },
-    "1pietr-noweskrzydl4": {
+    "1pietrnoweskrzydl4": {
       title: "I pietro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl4.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -84,
+          yaw: 84,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl3,3",
+          sceneId: "1pietrnoweskrzydl3,3",
         },
         {
           pitch: 0,
@@ -1255,31 +1262,31 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 60,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala39-lowscaled.jpg",
+      panorama: "media/images/sala39.webp",
       hotSpots: [
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 125,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-noweskrzydl4,4",
+          sceneId: "1pietrnoweskrzydl4,4",
         },
       ],
     },
-    "1pietr-noweskrzydl4,4": {
+    "1pietrnoweskrzydl4,4": {
       title: "I piętro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
-      yaw: -90,
+      yaw: 90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-noweskrzydl4-lowscaled.jpg",
+      panorama: "media/images/1pietrnoweskrzydl4.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -84,
+          yaw: 84,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-noweskrzydl3,3",
+          sceneId: "1pietrnoweskrzydl3,3",
         },
         {
           pitch: 0,
@@ -1296,36 +1303,36 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala40-lowscaled.jpg",
+      panorama: "media/images/sala40.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-noweskrzydl3",
+          sceneId: "1pietrnoweskrzydl3",
         },
       ],
     },
 
-    "2pietr-noweskrzydl1": {
+    "2pietrnoweskrzydl1": {
       title: "II piętro Nowe Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietr-noweskrzydl1-lowscaled.jpg",
+      panorama: "media/images/2pietrnoweskrzydl1.webp",
       hotSpots: [
         {
-          pitch: -3,
+          pitch: 3,
           yaw: 175,
           type: "scene",
           text: "Na dół",
-          sceneId: "2pietr-noweskrzydl-schod",
+          sceneId: "2pietrnoweskrzydlschod",
         },
         {
           pitch: 0,
-          yaw: -65,
+          yaw: 65,
           type: "scene",
           text: "Sala numer 57",
           sceneId: "sala57",
@@ -1338,39 +1345,39 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala57-lowscaled.jpg",
+      panorama: "media/images/sala57.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -170,
+          yaw: 170,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "2pietr-noweskrzydl1",
+          sceneId: "2pietrnoweskrzydl1",
         },
       ],
     },
     //sss początekk kskdksk ds
-    "parter-stareskrzydl1": {
+    "parterstareskrzydl1": {
       title: "Stare Skrzydło",
       hfov: 180,
       pitch: 0,
-      yaw: -27,
+      yaw: 27,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl2",
+          sceneId: "parterstareskrzydl2",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 150,
           type: "scene",
           text: "Przejdź",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
         {
           pitch: 0,
@@ -1385,41 +1392,41 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 8",
       hfov: 180,
       pitch: 0,
-      yaw: -100,
+      yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala8-lowscaled.jpg",
+      panorama: "media/images/sala8.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -85,
+          yaw: 85,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl1",
+          sceneId: "parterstareskrzydl1",
         },
       ],
     },
 
-    "parter-stareskrzydl2": {
+    "parterstareskrzydl2": {
       title: "Stare Skrzydło 2",
       hfov: 180,
       pitch: 0,
-      yaw: -30,
+      yaw: 30,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -35,
+          yaw: 35,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl3",
+          sceneId: "parterstareskrzydl3",
         },
         {
           pitch: 0,
           yaw: 145,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl1.1",
+          sceneId: "parterstareskrzydl1.1",
         },
         {
           pitch: 0,
@@ -1434,40 +1441,40 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 7",
       hfov: 180,
       pitch: 0,
-      yaw: -120,
+      yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala7-lowscaled.jpg",
+      panorama: "media/images/sala7.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 232,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl2",
+          sceneId: "parterstareskrzydl2",
         },
       ],
     },
-    "parter-stareskrzydl3": {
+    "parterstareskrzydl3": {
       title: "Stare Skrzydło 3",
       hfov: 180,
       pitch: 0,
       yaw: 70,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -7,
+          yaw: 7,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl4",
+          sceneId: "parterstareskrzydl4",
         },
         {
           pitch: 0,
           yaw: 260,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl2.2",
+          sceneId: "parterstareskrzydl2.2",
         },
         {
           pitch: 0,
@@ -1482,40 +1489,40 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 6",
       hfov: 180,
       pitch: 0,
-      yaw: -120,
+      yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala6-lowscaled.jpg",
+      panorama: "media/images/sala6.webp",
       hotSpots: [
         {
-          pitch: -3,
-          yaw: -145,
+          pitch: 3,
+          yaw: 145,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl3",
+          sceneId: "parterstareskrzydl3",
         },
       ],
     },
-    "parter-stareskrzydl4": {
+    "parterstareskrzydl4": {
       title: "Stare Skrzydło 4",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl4.webp",
       hotSpots: [
         {
           pitch: 20,
-          yaw: -40,
+          yaw: 40,
           type: "scene",
           text: "Na górę",
-          sceneId: "1pietr-stareskrzydl1",
+          sceneId: "1pietrstareskrzydl1",
         },
         {
           pitch: 0,
           yaw: 50,
           type: "scene",
           text: "Idź dalej",
-          sceneId: "parter-stareskrzydl3.3",
+          sceneId: "parterstareskrzydl3.3",
         },
         {
           pitch: 0,
@@ -1526,14 +1533,14 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -115,
+          yaw: 115,
           type: "scene",
           text: "Sala numer 3",
           sceneId: "sala3",
         },
         {
           pitch: 0,
-          yaw: -130,
+          yaw: 130,
           type: "scene",
           text: "Sala numer 2",
           sceneId: "sala2",
@@ -1546,14 +1553,14 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala4-lowscaled.jpg",
+      panorama: "media/images/sala4.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 25,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "parter-stareskrzydl4",
+          sceneId: "parterstareskrzydl4",
         },
       ],
     },
@@ -1563,25 +1570,25 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/Sala2-lowscaled.jpg",
+      panorama: "media/images/Sala2.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 60,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "parter-stareskrzydl4",
+          sceneId: "parterstareskrzydl4",
         },
         {
           pitch: 0,
-          yaw: -50,
+          yaw: 50,
           type: "scene",
           text: "Sala 2a",
           sceneId: "sala2a",
         },
         {
           pitch: 0,
-          yaw: -75,
+          yaw: 75,
           type: "scene",
           text: "Sala 2b",
           sceneId: "sala2b",
@@ -1594,11 +1601,11 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 180,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala2a-lowscaled.jpg",
+      panorama: "media/images/sala2a.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -60,
+          yaw: 60,
           type: "scene",
           text: "Wróć na korytarz",
           sceneId: "sala2",
@@ -1611,7 +1618,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala2b-lowscaled.jpg",
+      panorama: "media/images/sala2b.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1622,27 +1629,27 @@ const viewer = pannellum.viewer("panorama", {
         },
       ],
     },
-    "parter-stareskrzydl1.1": {
+    "parterstareskrzydl1.1": {
       title: "Stare Skrzydło",
       hfov: 180,
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl2",
+          sceneId: "parterstareskrzydl2",
         },
         {
-          pitch: -5,
+          pitch: 5,
           yaw: 150,
           type: "scene",
           text: "Przejdź",
-          sceneId: "part-srod",
+          sceneId: "partsrod",
         },
         {
           pitch: 0,
@@ -1657,41 +1664,41 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 8",
       hfov: 180,
       pitch: 0,
-      yaw: -100,
+      yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala8-lowscaled.jpg",
+      panorama: "media/images/sala8.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -85,
+          yaw: 85,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl1",
+          sceneId: "parterstareskrzydl1",
         },
       ],
     },
 
-    "parter-stareskrzydl2.2": {
+    "parterstareskrzydl2.2": {
       title: "Stare Skrzydło 2",
       hfov: 180,
       pitch: 0,
       yaw: 145,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -35,
+          yaw: 35,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl3",
+          sceneId: "parterstareskrzydl3",
         },
         {
           pitch: 0,
           yaw: 145,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl1.1",
+          sceneId: "parterstareskrzydl1.1",
         },
         {
           pitch: 0,
@@ -1706,40 +1713,40 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 7",
       hfov: 180,
       pitch: 0,
-      yaw: -120,
+      yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala7-lowscaled.jpg",
+      panorama: "media/images/sala7.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 232,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl2",
+          sceneId: "parterstareskrzydl2",
         },
       ],
     },
-    "parter-stareskrzydl3.3": {
+    "parterstareskrzydl3.3": {
       title: "Stare Skrzydło 3",
       hfov: 180,
       pitch: 0,
       yaw: 260,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -7,
+          yaw: 7,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl4",
+          sceneId: "parterstareskrzydl4",
         },
         {
           pitch: 0,
           yaw: 260,
           type: "scene",
           text: "Przejdź",
-          sceneId: "parter-stareskrzydl2.2",
+          sceneId: "parterstareskrzydl2.2",
         },
         {
           pitch: 0,
@@ -1754,40 +1761,40 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 6",
       hfov: 180,
       pitch: 0,
-      yaw: -120,
+      yaw: 120,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala6-lowscaled.jpg",
+      panorama: "media/images/sala6.webp",
       hotSpots: [
         {
-          pitch: -3,
-          yaw: -145,
+          pitch: 3,
+          yaw: 145,
           type: "scene",
           text: "Wyjdź na korytarz",
-          sceneId: "parter-stareskrzydl3",
+          sceneId: "parterstareskrzydl3",
         },
       ],
     },
-    "parter-stareskrzydl4.4": {
+    "parterstareskrzydl4.4": {
       title: "Stare Skrzydło 4",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/parter-stareskrzydl4-lowscaled.jpg",
+      panorama: "media/images/parterstareskrzydl4.webp",
       hotSpots: [
         {
           pitch: 20,
-          yaw: -40,
+          yaw: 40,
           type: "scene",
           text: "Na górę",
-          sceneId: "1pietr-stareskrzydl1",
+          sceneId: "1pietrstareskrzydl1",
         },
         {
           pitch: 0,
           yaw: 50,
           type: "scene",
           text: "Idź dalej",
-          sceneId: "parter-stareskrzydl3",
+          sceneId: "parterstareskrzydl3",
         },
         {
           pitch: 0,
@@ -1798,34 +1805,34 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -115,
+          yaw: 115,
           type: "scene",
           text: "Sala numer 3",
           sceneId: "sala3",
         },
               ],
     },
-    "1pietr-stareskrzydl1": {
+    "1pietrstareskrzydl1": {
       title: "1 Piętro Stare Skrzydło 1",
       hfov: 180,
-      pitch: -5,
+      pitch: 5,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl1-lowscaled.jpg",
+      panorama: "media/images/1pietrstareskrzydl1.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -85,
+          yaw: 85,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl1.5", // Changed connection
+          sceneId: "1pietrstareskrzydl1.5", // Changed connection
         },
         {
-          pitch: -25,
+          pitch: 25,
           yaw: 185,
           type: "scene",
           text: "Na dół",
-          sceneId: "parter-stareskrzydl4",
+          sceneId: "parterstareskrzydl4",
         },
         {
           pitch: 0,
@@ -1837,28 +1844,28 @@ const viewer = pannellum.viewer("panorama", {
       ],
     },
 
-    "1pietr-stareskrzydl1.5": {
+    "1pietrstareskrzydl1.5": {
       // New scene //fdfddfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsgdfsghu
       title: "1 Piętro Stare Skrzydło 1.5",
       hfov: 180,
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl1.5-lowscaled.jpg",
+      panorama: "media/images/1pietrstareskrzydl1.5.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 187,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl2",
+          sceneId: "1pietrstareskrzydl2",
         },
         {
           pitch: 0,
           yaw: 20,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl1",
+          sceneId: "1pietrstareskrzydl1",
         },
         {
           pitch: 0,
@@ -1875,31 +1882,31 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala17-lowscaled.jpg",
+      panorama: "media/images/sala17.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 124,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl1.5",
+          sceneId: "1pietrstareskrzydl1.5",
         },
       ],
     },
     sala3: {
       title: "Sala 3",
       hfov: 180,
-      pitch: -5,
-      yaw: -100,
+      pitch: 5,
+      yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala3-lowscaled.jpg",
+      panorama: "media/images/sala3.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -50,
+          pitch: 5,
+          yaw: 50,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "parter-stareskrzydl4.4",
+          sceneId: "parterstareskrzydl4.4",
         },
       ],
     },
@@ -1909,14 +1916,14 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 140,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16p-lowscaled.jpg",
+      panorama: "media/images/sala16p.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -110,
+          yaw: 110,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl1",
+          sceneId: "1pietrstareskrzydl1",
         },
         {
           pitch: 0,
@@ -1940,11 +1947,11 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16a-lowscaled.jpg",
+      panorama: "media/images/sala16a.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -47,
+          pitch: 5,
+          yaw: 47,
           type: "scene",
           text: "Wróć na korytarz",
           sceneId: "sala16p",
@@ -1957,7 +1964,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala16b-lowscaled.jpg",
+      panorama: "media/images/sala16b.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -1968,75 +1975,82 @@ const viewer = pannellum.viewer("panorama", {
         },
       ],
     },
-    "1pietr-stareskrzydl2": {
+    "1pietrstareskrzydl2": {
       title: "1 Piętro Stare Skrzydło 2",
       hfov: 180,
       pitch: 0,
       yaw: 170,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl2-lowscaled.jpg",
+      panorama: "media/images/1pietrstareskrzydl2.webp",
       hotSpots: [
         {
           pitch: 0,
           yaw: 130,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl3",
+          sceneId: "1pietrstareskrzydl3",
         },
         {
           pitch: 0,
           yaw: 225,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl1.5", // Changed connection
+          sceneId: "1pietrstareskrzydl1.5", // Changed connection
         },
         {
-          pitch: -5,
-          yaw: -47,
+          pitch: 5,
+          yaw: 47,
           type: "scene",
           text: "Sala 18",
           sceneId: "sala18",
         },
+        {
+          pitch: 0,
+          yaw: 115,
+          type: "scene",
+          text: "Sala 19",
+          sceneId: "sala19"
+        }
       ],
     },
     sala18: {
       title: "Sala 18",
       hfov: 180,
-      pitch: -5,
-      yaw: -20,
+      pitch: 5,
+      yaw: 20,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala18-lowscaled.jpg",
+      panorama: "media/images/sala18.webp",
       hotSpots: [
         {
-          pitch: -5,
-          yaw: -67,
+          pitch: 5,
+          yaw: 67,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl2",
+          sceneId: "1pietrstareskrzydl2",
         },
       ],
     },
-    "1pietr-stareskrzydl3": {
+    "1pietrstareskrzydl3": {
       title: "1 Piętro Stare Skrzydło 3",
       hfov: 180,
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/1pietr-stareskrzydl3-lowscaled.jpg",
+      panorama: "media/images/1pietrstareskrzydl3.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -20,
+          yaw: 20,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-stareskrzydl2",
+          sceneId: "1pietrstareskrzydl2",
         },
         {
           pitch: 0,
           yaw: 160,
           type: "scene",
           text: "Przejdź",
-          sceneId: "1pietr-srod",
+          sceneId: "1pietrsrod",
         },
         {
           pitch: 0,
@@ -2051,16 +2065,16 @@ const viewer = pannellum.viewer("panorama", {
       title: "Sala 19",
       hfov: 180,
       pitch: 0,
-      yaw: -40,
+      yaw: 40,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala19-lowscaled.jpg",
+      panorama: "media/images/sala19.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -60,
+          yaw: 60,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl3",
+          sceneId: "1pietrstareskrzydl2",
         },
       ],
     },
@@ -2070,14 +2084,14 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala20-lowscaled.jpg",
+      panorama: "media/images/sala20.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -29,
+          yaw: 29,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "1pietr-stareskrzydl3",
+          sceneId: "1pietrstareskrzydl3",
         },
       ],
     },
@@ -2087,21 +2101,21 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/konf2pietro-lowscaled.jpg",
+      panorama: "media/images/konf2pietro.webp",
       hotSpots: [
         {
           pitch: 0,
-          yaw: -15,
+          yaw: 15,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
           pitch: 0,
           yaw: 85,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
       ],
     },
@@ -2111,18 +2125,18 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.jpg",
+      panorama: "media/images/2pietrostareskrzyd1.webp",
       hotSpots: [
         {
-          pitch: -1,
-          yaw: -213,
+          pitch: 1,
+          yaw: 213,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Korytarz",
           sceneId: "2pietrostareskrzyd2",
@@ -2142,18 +2156,18 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 160,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd1-lowscaled.jpg",
+      panorama: "media/images/2pietrostareskrzyd1.webp",
       hotSpots: [
         {
-          pitch: -1,
-          yaw: -213,
+          pitch: 1,
+          yaw: 213,
           type: "scene",
           text: "Wróć na korytarz",
-          sceneId: "2pietr-srod",
+          sceneId: "2pietrsrod",
         },
         {
           pitch: 0,
-          yaw: -30,
+          yaw: 30,
           type: "scene",
           text: "Korytarz",
           sceneId: "2pietrostareskrzyd2",
@@ -2173,10 +2187,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 100,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala45-lowscaled.jpg",
+      panorama: "media/images/sala45.webp",
       hotSpots: [
         {
-          pitch: -1,
+          pitch: 1,
           yaw: 45,
           type: "scene",
           text: "Wróć na korytarz",
@@ -2190,10 +2204,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.jpg",
+      panorama: "media/images/2pietrostareskrzyd2.webp",
       hotSpots: [
         {
-          pitch: -1,
+          pitch: 1,
           yaw: 225,
           type: "scene",
           text: "Wróć na korytarz",
@@ -2226,12 +2240,12 @@ const viewer = pannellum.viewer("panorama", {
       title: "Korytarz",
       hfov: 180,
       pitch: 0,
-      yaw: -130,
+      yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/2pietrostareskrzyd2-lowscaled.jpg",
+      panorama: "media/images/2pietrostareskrzyd2.webp",
       hotSpots: [
         {
-          pitch: -1,
+          pitch: 1,
           yaw: 225,
           type: "scene",
           text: "Wróć na korytarz",
@@ -2266,10 +2280,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala46-lowscaled.jpg",
+      panorama: "media/images/sala46.webp",
       hotSpots: [
         {
-          pitch: -1,
+          pitch: 1,
           yaw: 65,
           type: "scene",
           text: "Wróć na korytarz",
@@ -2283,10 +2297,10 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 50,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala47-lowscaled.jpg",
+      panorama: "media/images/sala47.webp",
       hotSpots: [
         {
-          pitch: -1,
+          pitch: 1,
           yaw: 20,
           type: "scene",
           text: "Wróć na korytarz",
@@ -2297,13 +2311,13 @@ const viewer = pannellum.viewer("panorama", {
     olimp1: {
       title: "Olimp",
       hfov: 180,
-      pitch: -5,
+      pitch: 5,
       yaw: 90,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/olimp1-lowscaled.jpg",
+      panorama: "media/images/olimp1.webp",
       hotSpots: [
         {
-          pitch: -20,
+          pitch: 20,
           yaw: 90,
           type: "scene",
           text: "Na dół",
@@ -2311,7 +2325,7 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -10,
+          yaw: 10,
           type: "scene",
           text: "Do sali 61",
           sceneId: "olimp2",
@@ -2325,7 +2339,7 @@ const viewer = pannellum.viewer("panorama", {
         },
         {
           pitch: 0,
-          yaw: -108,
+          yaw: 108,
           type: "scene",
           text: "Sala 60",
           sceneId: "sala60",
@@ -2335,14 +2349,14 @@ const viewer = pannellum.viewer("panorama", {
     sala59: {
       title: "Sala 59",
       hfov: 180,
-      pitch: -10,
+      pitch: 10,
       yaw: 0,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala59-lowscaled.jpg",
+      panorama: "media/images/sala59.webp",
       hotSpots: [
         {
-          pitch: -7,
-          yaw: -83,
+          pitch: 7,
+          yaw: 83,
           type: "scene",
           text: "Wróć na korytarz",
           sceneId: "olimp1",
@@ -2352,14 +2366,14 @@ const viewer = pannellum.viewer("panorama", {
     sala60: {
       title: "Sala 60",
       hfov: 180,
-      pitch: -5,
-      yaw: -150,
+      pitch: 5,
+      yaw: 150,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/sala60-lowscaled.jpg",
+      panorama: "media/images/sala60.webp",
       hotSpots: [
         {
-          pitch: -7,
-          yaw: -150,
+          pitch: 7,
+          yaw: 150,
           type: "scene",
           text: "Wróć na korytarz",
           sceneId: "olimp1",
@@ -2372,7 +2386,7 @@ const viewer = pannellum.viewer("panorama", {
       pitch: 0,
       yaw: 130,
       type: "equirectangular",
-      panorama: "media/lowscaled_images/olimp2-lowscaled.jpg",
+      panorama: "media/images/olimp2.webp",
       hotSpots: [
         {
           pitch: 0,
@@ -2383,213 +2397,14 @@ const viewer = pannellum.viewer("panorama", {
         },
       ],
     },
- //Zdjęcia testowe piętro 2
-  dwapietronoweskrzydtest: {
-  title: "test2",
-  hfov: 180,
-  pitch: 0,
-  yaw: -80,
-  type: "equirectangular",
-  panorama: "media/experimental-14mp/2pietronowetest.jpg",
-  hotSpots: [
-    {
-      pitch: 0,
-      yaw: -100,
-      type: "scene",
-      text: "dalej",
-      sceneId: "dwapietronoweskrzydtest2",
-    },
-    {
-      pitch: -20,
-      yaw: 190,
-      type: "scene",
-      text: "Na dół",
-      sceneId: "2pietr-noweskrzydl-schod",
-    },
-  ],
-},
-    dwapietronoweskrzydtest2: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/2pietronowetest2.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: 30,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest",
-        },
-        {
-          pitch: 0,
-          yaw: -110,
-          type: "scene",
-          text: "dalej",
-          sceneId: "dwapietronoweskrzydtest3",
-        },
-      ],
-    },
-    dwapietronoweskrzydtest3: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/2pietronowetest3.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: -140,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest2",
-        },
-        {
-          pitch: 0,
-          yaw: 35,
-          type: "scene",
-          text: "dalej",
-          sceneId: "dwapietronoweskrzydtest4",
-        },
-        {
-          pitch: 0,
-          yaw: 120,
-          type: "scene",
-          text: "sala 50",
-          sceneId: "klasa50test",
-        },
-        
-      ],
-    },
-    dwapietronoweskrzydtest4: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/2pietronowetest4.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: -105,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest3",
-        },
-        {
-          pitch: 0,
-          yaw: 75,
-          type: "scene",
-          text: "dalej",
-          sceneId: "dwapietronoweskrzydtest5",
-        },
-        {
-          pitch: 0,
-          yaw: -20,
-          type: "scene",
-          text: "sala 57",
-          sceneId: "klasa57test",
-        },
-      ],
-    },
-    dwapietronoweskrzydtest5: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/2pietronowetest5.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: 10,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest4",
-        },
-        {
-          pitch: 0,
-          yaw: 115,
-          type: "scene",
-          text: "sala 55",
-          sceneId: "klasa55test",
-        },
-      ],
-    },
-    klasa55test: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/klasa55test.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: -50,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest5",
-        },
-        
-      ],
-    },
-    klasa50test: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/klasa50test.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: 110,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest3",
-        },
-        
-      ],
-    },
-    klasa57test: {
-      title: "test2",
-      hfov: 180,
-      pitch: 0,
-      yaw: 130,
-      type: "equirectangular",
-      panorama: "media/experimental-14mp/klasa57test.jpg",
-      hotSpots: [
-        {
-          pitch: 0,
-          yaw: -70,
-          type: "scene",
-          text: "do tyłu",
-          sceneId: "dwapietronoweskrzydtest4",
-        },
-        
-      ],
-
-
-    }
-
-
-
-
-
-
-
-
+ 
   }, //wazne nawiasy nie usuwac
 });
 
   document.getElementById("welcomeButton").addEventListener("click", function () {
   document.getElementById("welcomeScreen").style.display = "none";
   document.getElementById("searchDiv").classList.remove("hidden");
-  document.querySelector(".quick-access-menu").classList.remove("blurred");
+  document.querySelector(".quickaccessmenu").classList.remove("blurred");
   viewer.resize();
   // preloadImages(); Removed call to preload all images
 });
@@ -2638,42 +2453,42 @@ function goToScene() {
     Stołówka: "Sklepik",
     stolowka: "Sklepik",
     sekretariat: "sekretariat",
-    biblioteka: "biblioteka",
+    "biblioteka": "biblioteka",
     1: "sala1",
     "sala 1": "sala1",
-    sala2: "sala2",
+    "sala2": "sala2",
     "sala 2": "sala2",
-    sala2a: "sala2a",
+    "sala2a": "sala2a",
     "sala 2a": "sala2a",
     "2a": "sala2a",
-    sala2b: "sala2b",
+    "sala2b": "sala2b",
     "sala 2b": "sala2b",
     "2b": "sala2b",
-    sala3: "sala3",
+    "sala3": "sala3",
     3: "sala3",
     "sala 3": "sala3",
-    sala4: "sala4",
+    "sala4": "sala4",
     "sala 4": "sala4",
     6: "sala6",
     "sala 6": "sala6",
-    sala6: "sala6",
+    "sala6": "sala6",
     7: "sala7",
     "sala 7": "sala7",
-    sala7: "sala7",
+    "sala7": "sala7",
     8: "sala8",
     "sala 8": "sala8",
-    sala8: "sala8",
+    "sala8": "sala8",
     16: "sala16p",
     "sale 16": "sala16p",
     "16a": "sala16a",
     "16 a": "sala16a",
     "sala 16a": "sala16a",
-    sala16a: "sala16a",
+    "sala16a": "sala16a",
     "sala 16 a": "sala16a",
     "16b": "sala16b",
     "16 b": "sala16b",
     "sala 16b": "sala16b",
-    sala16b: "sala16b",
+    "sala16b": "sala16b",
     "sala 16 b": "sala16b",
     17: "sala17",
     "sala 17": "sala17",
@@ -2705,7 +2520,7 @@ function goToScene() {
     45: "sala45",
     "sala 45": "sala45",
     47: "sala47",
-    sala47: "sala47",
+    "sala47": "sala47",
     57: "sala57",
     "sala 57": "sala57",
     59: "sala59",
@@ -2714,9 +2529,8 @@ function goToScene() {
     "sala 60": "sala60",
     61: "olimp2",
     "sala 61": "olimp2",
-    korytarz: "hallway",
-    "sala gimnastyczna": "sala-gim",
-    dwapietronoweskrzydtest: "test",
+    "korytarz": "hallway",
+    "sala gimnastyczna": "salagim",
   };
 
   if (sceneMapping[searchInput]) {
@@ -2747,35 +2561,35 @@ document
   .addEventListener("click", function () {
     highContrastEnabled = !highContrastEnabled;
     if (highContrastEnabled) {
-      document.body.classList.add("high-contrast");
+      document.body.classList.add("highcontrast");
       this.textContent = "Wyłącz";
-      this.classList.add("bg-gray-700");
-      this.classList.remove("bg-blue-500");
+      this.classList.add("bggray700");
+      this.classList.remove("bgblue500");
     } else {
-      document.body.classList.remove("high-contrast");
+      document.body.classList.remove("highcontrast");
       this.textContent = "Włącz";
-      this.classList.remove("bg-gray-700");
-      this.classList.add("bg-blue-500");
+      this.classList.remove("bggray700");
+      this.classList.add("bgblue500");
     }
   });
 let currentTextSize = 100;
-const MIN_TEXT_SIZE = 80;
-const MAX_TEXT_SIZE = 150;
+const MINTEXTSIZE = 80;
+const MAXTEXTSIZE = 150;
 
-document.body.setAttribute("data-text-scale", currentTextSize);
+document.body.setAttribute("datatextscale", currentTextSize);
 
 document.getElementById("increaseText").addEventListener("click", function () {
-  if (currentTextSize + 10 <= MAX_TEXT_SIZE) {
+  if (currentTextSize + 10 <= MAXTEXTSIZE) {
     currentTextSize += 10;
-    document.body.setAttribute("data-text-scale", currentTextSize);
+    document.body.setAttribute("datatextscale", currentTextSize);
     console.log("Zwiększono rozmiar tekstu do:", currentTextSize);
   }
 });
 
 document.getElementById("decreaseText").addEventListener("click", function () {
-  if (currentTextSize - 10 >= MIN_TEXT_SIZE) {
-    currentTextSize -= 10;
-    document.body.setAttribute("data-text-scale", currentTextSize);
+  if (currentTextSize - 10 >= MINTEXTSIZE) {
+    currentTextSize = 10;
+    document.body.setAttribute("datatextscale", currentTextSize);
     console.log("Zmniejszono rozmiar tekstu do:", currentTextSize);
   }
 });
@@ -2785,20 +2599,20 @@ document
   .addEventListener("click", function () {
     animationsEnabled = !animationsEnabled;
     if (animationsEnabled) {
-      document.body.classList.remove("reduce-motion");
+      document.body.classList.remove("reducemotion");
       this.textContent = "Wyłącz";
-      this.classList.add("bg-blue-500");
-      this.classList.remove("bg-gray-700");
-      document.querySelectorAll(".pnlm-hotspot-base").forEach((hotspot) => {
+      this.classList.add("bgblue500");
+      this.classList.remove("bggray700");
+      document.querySelectorAll(".pnlmhotspotbase").forEach((hotspot) => {
         hotspot.style.transition = "";
         hotspot.style.transform = "";
       });
     } else {
-      document.body.classList.add("reduce-motion");
+      document.body.classList.add("reducemotion");
       this.textContent = "Włącz";
-      this.classList.remove("bg-blue-500");
-      this.classList.add("bg-gray-700");
-      document.querySelectorAll(".pnlm-hotspot-base").forEach((hotspot) => {
+      this.classList.remove("bgblue500");
+      this.classList.add("bggray700");
+      document.querySelectorAll(".pnlmhotspotbase").forEach((hotspot) => {
         hotspot.style.transition = "none";
         hotspot.style.transform = "none";
       });
@@ -2810,13 +2624,13 @@ document.getElementById("showMap").addEventListener("click", function () {
 });
 
 document.getElementById("mapOverlay").addEventListener("click", function (e) {
-  if (e.target === this || e.target.classList.contains("pnlm-map-hint")) {
+  if (e.target === this || e.target.classList.contains("pnlmmaphint")) {
     this.style.display = "none";
   }
 });
 
 document
-  .querySelector(".pnlm-map-container")
+  .querySelector(".pnlmmapcontainer")
   .addEventListener("click", function (e) {
     e.stopPropagation();
   });
@@ -2836,7 +2650,7 @@ document.addEventListener("click", function (e) {
 });
 
 const brightnessToggle = document.getElementById("brightnessToggle");
-const container = document.querySelector(".pnlm-container");
+const container = document.querySelector(".pnlmcontainer");
 let isDimmed = false;
 
 brightnessToggle.addEventListener("click", function () {
