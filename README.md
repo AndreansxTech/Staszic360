@@ -17,9 +17,9 @@ Read the README.md in English <a href="./additional-media/README-en.md">here</a>
 --->
 <div align="center">
 
-  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Andreansxtech/Staszic360/deploy-preview.yml?branch=preview&style=for-the-badge)  
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/AndreansxTech/Staszic360?style=for-the-badge&logo=github)
-![GitHub last commit](https://img.shields.io/github/last-commit/Andreansxtech/Staszic360?style=for-the-badge)  
+  ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Andreansx/Staszic360/deploy-preview.yml?branch=preview&style=for-the-badge)  
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Andreansx/Staszic360?style=for-the-badge&logo=github)
+![GitHub last commit](https://img.shields.io/github/last-commit/Andreansx/Staszic360?style=for-the-badge)  
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/Licencja-CC_BY--NC--SA_4.0-%23ff2652?style=for-the-badge)](https://creativecommons.org/licenses/by-nc-sa/4.0/)  ![WCAG](https://img.shields.io/badge/WCAG-%23015A69.svg?style=for-the-badge&logo=WCAG&logoColor=white)
 [![Kontakt](https://img.shields.io/badge/Kontakt-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Andrtexh)
 
@@ -131,7 +131,7 @@ Staszic360/
 │   ├── lowscaled_images/
 │   │   └── ...                           ( Zdjęcia w mniejszej rozdzielczości )
 │   └── ...                               ( folder z panoramami )
-├── AndreansxTech_0x1A5C5CDB_public.asc - Klucz publiczny do weryfikacji podpisów
+├── Andreansx_public_key.asc - Klucz publiczny do weryfikacji podpisów
 ├── check_images.py                     - Skrypt Python do sprawdzenia ścieżek
 ├── index.html                          - Główny plik HTML
 ├── index.html.sig                      - Podpis cyfrowy index.html
@@ -151,7 +151,7 @@ Staszic360/
 <h1>Prawa</h1>
 </div>
 
-## Stworzone z ❤️ przez <a href="https://AndreansxTech.github.io/">Michała Bańkowskiego (*AndreansxTech*)</a>, Mateusza Długaja (*Matkard1*) i Gabriela Świątka (*Simonaven265*) 2025
+## Stworzone z ❤️ przez <a href="https://github.com/andreansx/">Michała Bańkowskiego (*Andreansx*)</a>, <a href="https://github.com/Matkard1">Mateusza Długaja (*Matkard1*)</a> i <a href="https://github.com/Simonaven265">Gabriela Świątka (*Simonaven265*)</a> 2025
 
 ## Projekt używa biblioteki <a href="https://github.com/mpetroff/pannellum">Pannellum.js</a>, której autorem jest <a href="https://mpetroff.net/">Matthew Petroff</a>.
 
