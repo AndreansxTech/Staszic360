@@ -1,20 +1,13 @@
 Read the README.md in English <a href="./additional-media/README-en.md">here</a>
 
 # Wirtualny Spacer - I LO im. Stanisława Staszica w Chrzanowie
-<!---
-<p align="center">
-  <img src="./Staszic-cropped.png" height="200"/>
-</p>--->
+
 
 <p align="center">
   <img src="./additional-media/IMG_0150.jpeg" height="150"/>
 </p>
 
 
-<!--- ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Static Badge](https://img.shields.io/badge/Panellum.js-%23ffa321?style=for-the-badge)
---->
 <div align="center">
 
   ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Andreansxtech/Staszic360/deploy-preview.yml?branch=preview&style=for-the-badge)  
@@ -64,6 +57,7 @@ Ten projekt zapewnia immersyjne doświadczenie wirtualnego spaceru po korytarzac
 - Funkcjonalność szybkiego dostępu do sal lekcyjnych
 - Piękny styl glassmorphism
 - Pełna dostępność zgodnie z W3C
+- W.I.P. Możliwość wdrożenia jako kontener Docker w środowisku Kubernetes
 
 <div align="center">
 <h2> 🤝 Dostępność </h2>
@@ -98,21 +92,21 @@ Staszic360 został zaprojektowany z myślą o szerokiej dostępności i inkluzyw
 - Pliki są podpisane cyfrowo aby można było zapewnić ich integralność i autentyczność. ( Czytaj niżej )
 - Jeśli jesteś zainteresowanym rozwinięciem tego projektu albo jesteś poprostu ciekaw jak to dokładniej działa i jak postępował rozwój, sprawdź koniecznie pliki <a href="./LICENSE">LICENSE</a> oraz <a href="./additional-media/devnotes.md">devnotes</a>
 - Jeśli chcesz zaproponować coś albo cokolwiek, możesz napisać na <a href="https://t.me/Andrtexh" target="_blank">Telegramie</a>.
-
+- Trwają prace nad przygotowaniem obrazu Docker oraz manifestu Kubernetes aby umożliwić łatwe i zgodne z najnowszymi praktykami wdrażanie aplikacji.
 ## Weryfikacja podpisów
 
 Pliki `index.html`, `script.js` i `style.css` są podpisane cyfrowo za pomocą GPG, aby zapewnić ich integralność i autentyczność. Oznacza to, że możesz mieć pewność, iż pliki te nie zostały zmodyfikowane przez osoby trzecie od momentu ich podpisania przez nas. Należy mieć na uwadze, że weryfikacja sygnatur nie ma tutaj takiego charakteru, jak przy zkompilowanych programach gdzie krytyczna jest zgodność z kodem źródłowym.  
 
 Pamiętaj żeby przy weryfikacji podpisów, sprawdzać je z podpisami z odpowiedniego Release, nie z najnowszymi.
 
-**Klucz publiczny**: [AndreansxTech_0x1A5C5CDB_public.asc](./AndreansxTech_0x1A5C5CDB_public.asc)
+**Klucz publiczny**: [Andreansx_public_key.asc](./Andreansx_public_key.asc)
 
-**Odcisk cyfrowy klucza**: 9282 DF55 1096 3273 6618  5B2E 4C80 939B 1A5C 5CDB
+**Odcisk cyfrowy klucza**: B5DF A80C FB9B EA3B FD11  B4C6 2B20 CCED 4304 8B3E
 
 **Importowanie klucza (wiersz poleceń):**
 
 ```bash
-gpg --import AndreansxTech_0x1A5C5CDB_public.asc
+gpg --import Andreansx_public_key.asc
 ```
 **Weryfikacja podpisów**
 ```bash
@@ -129,7 +123,7 @@ Staszic360/
 │   ├── lowscaled_images/
 │   │   └── ...                           ( Zdjęcia w mniejszej rozdzielczości )
 │   └── ...                               ( folder z panoramami )
-├── AndreansxTech_0x1A5C5CDB_public.asc - Klucz publiczny do weryfikacji podpisów
+├── Andreansx_public_key.asc            - Klucz publiczny do weryfikacji podpisów
 ├── check_images.py                     - Skrypt Python do sprawdzenia ścieżek
 ├── index.html                          - Główny plik HTML
 ├── index.html.sig                      - Podpis cyfrowy index.html
@@ -145,11 +139,14 @@ Staszic360/
 ├── build.sh                            - Plik Shell zawierający komendę do Cloudflare build environment dla wersji produkcyjnej
 └── README.md
 ```
+
 <div align="center">
+
 <h1>Prawa</h1>
+
 </div>
 
-## Stworzone z ❤️ przez <a href="https://AndreansxTech.github.io/">Michała Bańkowskiego (*AndreansxTech*)</a>, Mateusza Długaja (*Matkard1*) i Gabriela Świątka (*Simonaven265*) 2025
+## Stworzone z ❤️ przez <a href="https://github.com/Andreansx">Michała Bańkowskiego (*Andreansx*)</a>, Mateusza Długaja (*Matkard1*) i Gabriela Świątka (*Simonaven265*) 2025
 
 ## Projekt używa biblioteki <a href="https://github.com/mpetroff/pannellum">Pannellum.js</a>, której autorem jest <a href="https://mpetroff.net/">Matthew Petroff</a>.
 
