@@ -32,10 +32,12 @@ jobs:
 
       - name: Prepare deploy directory (minimal set for GitHub Pages)
         run: |
-          mkdir -p deploy/media
+          mkdir -p deploy/media/lowscaled_images
+          mkdir -p deploy/media/experimental-14mp
           cp index.html style.css pannellum.css pannellum.js script.js version.json index.html.sig style.css.sig script.js.sig favicon.ico deploy/
           cp -r additional-media deploy/
-          cp -r media/* deploy/media/
+          cp -r media/lowscaled_images/* deploy/media/lowscaled_images/
+          cp -r media/experimental-14mp/* deploy/media/experimental-14mp/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
